@@ -1,0 +1,103 @@
+.btn-one, .btn-two {
+    font-size: 14px;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .btn-one .text, 
+  .btn-two .text {
+    padding: 10px 8px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  
+  .btn-one .text:hover, 
+  .btn-two .text:hover {
+    background-color: #dfdede;
+  }
+  
+  .btn-one p, 
+  .btn-two p {
+    border-left: 1px solid #ccc;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s ease;
+    overflow: hidden;
+  }
+  
+  .btn-one p:hover, 
+  .btn-two p:hover {
+    background-color: #dfdede;
+  }
+  
+.bg-overlay{
+    background-color: rgba(0, 0, 0, 0.103);
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 9px;
+  }
+
+
+  .slider-container {
+    position: relative;
+    display: flex;
+    width: 500px;
+    height: 55px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
+  
+  .slider-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: white;
+    border: 3px solid #333;
+    border-radius: 8px;
+    transition: left 0.3s ease;
+    z-index: 1;
+  }
+
+  .custom-svg  {
+    width: 56px;
+    height: 56px;
+    display: block;
+  }
+  
+  .slider-background.option1 {
+    left: 0%;
+  }
+  .slider-background.option2 {
+    left: 50%;
+  }
+  
+  .slider-button {
+    flex: 1;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+  }
+  
+  .slider-button.active {
+    color: #000;
+  }
+  
