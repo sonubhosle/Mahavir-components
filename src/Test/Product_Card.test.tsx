@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Product_Card from '../Components/Product_Card';
 
+
 const mockData = {
   id: 1,
   name: 'Brilliant Diamond Ring',
@@ -12,6 +13,7 @@ const mockData = {
     silver: [{ color: 'rgb(192, 192, 192)', img: 'silver-ring.webp' }],
   },
 };
+
 
 describe('Product_Card Component', () => {
   test('renders product name and price', () => {

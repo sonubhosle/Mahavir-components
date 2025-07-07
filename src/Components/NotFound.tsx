@@ -1,9 +1,11 @@
 import React from 'react'
 
-const NotFound: React.FC = () => {
-  return (
-  <div className="text-center py-10">Loading...</div>
-  )
+
+const NotFound:React.FC = () =>{
+    return(
+        <h1>Not Found</h1>
+    )
 }
+
 
 export default NotFound

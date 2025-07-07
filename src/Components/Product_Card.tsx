@@ -25,16 +25,13 @@ interface ProductCardProps {
   onColorChange?: (color: string) => void;
 }
 
-const Product_Card: React.FC<ProductCardProps> = ({
-  data,
-  className = "",
-  onColorChange,
-}) => {
+const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColorChange,}) => {
   const defaultColor = Object.keys(data.images)[0];
   const [selectedColor, setSelectedColor] = useState<string>(defaultColor);
   const [activeImg, setActiveImg] = useState<string>(
     data.images[defaultColor][0].img
   );
+ 
 
   const handleColorChange = (color: string) => {
     setSelectedColor(color);

@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import NotFound from '../Components/NotFound';
 
-describe('NotFound Component', () => {
+
+describe('Not Found Component', () => {
   test('renders loading text', () => {
     render(<NotFound />);
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+    expect(screen.getByText('Not Found')).toBeInTheDocument();
   });
 });

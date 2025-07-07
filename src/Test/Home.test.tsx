@@ -17,7 +17,12 @@ jest.mock('../Components/StoneSelectorModal', () => ({ onSelect, onClose }: any)
 
 // ✅ MOCK ALERT TO PREVENT ERROR
 beforeAll(() => {
-  window.alert = jest.fn(); // mock alert so jsdom doesn't throw
+  window.alert = jest.fn(); // mock alert so ajsdom doesn't throw
+});
+
+test('initial active step is Step 1', () => {
+  render(<Home />);
+  expect(screen.getByTestId('step-one')).toBeInTheDocument();
 });
 
 describe('Home Component', () => {
@@ -64,3 +69,11 @@ describe('Home Component', () => {
     expect(screen.getByTestId('step-three')).toBeInTheDocument();
   });
 });
+
+test('can close modal without selecting stone', () => {
+  render(<Home />);
+  fireEvent.click(screen.getByText('2'));
+  fireEvent.click(screen.getByText('Close'));
+  expect(screen.queryByTestId('modal')).not.toBeInTheDocument();
+});
+

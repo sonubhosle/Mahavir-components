@@ -100,8 +100,8 @@ const Home: React.FC = () => {
                 >
                   <div
                     className={`absolute top-1/2 -translate-y-1/2 w-[50px] h-[50px] rotate-45 ${activeStep === step.id
-                        ? "bg-white border-t-2 border-r-2 border-black"
-                        : "bg-gray-50 border-t-2 border-r-2 border-gray-300"
+                      ? "bg-white border-t-2 border-r-2 border-black"
+                      : "bg-gray-50 border-t-2 border-r-2 border-gray-300"
                       }`}
                   ></div>
                 </div>

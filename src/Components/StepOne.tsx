@@ -48,10 +48,10 @@ const StepOne: React.FC = () => {
       <hr className="border-0 h-[1px] bg-gray-100 " />
       <div className="flex justify-between items-center py-4">
         <h2 className="text-xl font-semibold text-black flex gap-6">
-          <div className="btn-one flex items-center bg-gray-100">
+          <div className="btn-one flex items-center bg-gray-100 ">
             <div className="text flex items-center gap-2">
               <FaRegCircle color="gold" size={20} className="flex items-center" /> 14k Yellow Gold
-            </div>{" "}
+            </div>
             <p>
               <IoCloseOutline className="flex items-center" size={23} />
             </p>
@@ -59,7 +59,7 @@ const StepOne: React.FC = () => {
           <div className="btn-two flex items-center bg-gray-100 ">
             <div className="text flex items-center gap-2">
               <LiaLifeRingSolid size={27} className="flex items-center" /> Round
-            </div>{" "}
+            </div>
             <p>
               <IoCloseOutline size={23} className="flex items-center" />
             </p>
