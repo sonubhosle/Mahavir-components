@@ -1,7 +1,19 @@
+import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { modelArray } from "./Data"; 
+import { modelArray } from "./Data";
 
-const StoneSelectorModal = ({ onSelect, onClose }) => {
+interface ModelItem {
+  id: string | number;
+  name: string;
+  svg: string;
+}
+
+interface StoneSelectorModalProps {
+  onSelect: (stoneName: string) => void;
+  onClose: () => void;
+}
+
+const StoneSelectorModal: React.FC<StoneSelectorModalProps> = ({ onSelect, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-overlay z-50">
       <div className="bg-white p-6 w-[600px] rounded-lg shadow-lg space-y-4 relative">
@@ -12,13 +24,17 @@ const StoneSelectorModal = ({ onSelect, onClose }) => {
         </div>
 
         {/* Close Button */}
-        <button onClick={onClose} className="absolute cursor-pointer top-4 right-4 text-gray-600 hover:text-black">
+        <button
+          onClick={onClose}
+          className="absolute cursor-pointer top-4 right-4 text-gray-600 hover:text-black"
+          aria-label="Close modal"
+        >
           <IoCloseOutline size={25} />
         </button>
 
         {/* Options */}
         <div className="flex flex-row gap-4 py-7 items-center justify-center">
-          {modelArray.map((item) => (
+          {modelArray.map((item: ModelItem) => (
             <button
               key={item.id}
               onClick={() => onSelect(item.name)}
@@ -26,12 +42,13 @@ const StoneSelectorModal = ({ onSelect, onClose }) => {
               dangerouslySetInnerHTML={{
                 __html: `${item.svg}<div class="mt-2 text-sm font-medium">${item.name}</div>`,
               }}
+              aria-label={`Select stone ${item.name}`}
             />
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default StoneSelectorModal;
