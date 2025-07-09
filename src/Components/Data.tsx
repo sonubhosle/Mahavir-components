@@ -134,4 +134,198 @@ export const toggleArray = [
 
 ]
 
+export const slidesVideos = [
+  {
+    id: 1,
+    gif: "https://checkout.keyzarjewelry.com/cdn/shop/videos/c/vp/923ee6c6f30b4a2a8153f2af83dff4f0/923ee6c6f30b4a2a8153f2af83dff4f0.HD-1080p-7.2Mbps-32224908.mp4"
+  },
+  {
+    id: 2,
+    gif: "https://checkout.keyzarjewelry.com/cdn/shop/videos/c/vp/a23cca6b22494241be0568e827dc8214/a23cca6b22494241be0568e827dc8214.HD-1080p-7.2Mbps-32224890.mp4"
+  },
+  {
+    id: 3,
+    gif: "https://checkout.keyzarjewelry.com/cdn/shop/videos/c/vp/077bf4bcc49a413eaf77327ff0ab3642/077bf4bcc49a413eaf77327ff0ab3642.HD-1080p-7.2Mbps-32224893.mp4"
+  },
+  {
+    id: 4,
+    gif: "https://checkout.keyzarjewelry.com/cdn/shop/videos/c/vp/150c0487bc944b008c375fbfe1af287a/150c0487bc944b008c375fbfe1af287a.HD-1080p-2.5Mbps-32224894.mp4"
+  },
+  {
+    id: 5,
+    gif: "https://checkout.keyzarjewelry.com/cdn/shop/videos/c/vp/3f049a5fc65f4972aaee5929b2ce8186/3f049a5fc65f4972aaee5929b2ce8186.HD-1080p-7.2Mbps-32224898.mp4"
+  },
+  {
+    id: 6,
+    gif: "https://checkout.keyzarjewelry.com/cdn/shop/videos/c/vp/73fe10226d4444c4ae09698a71012fd4/73fe10226d4444c4ae09698a71012fd4.HD-1080p-7.2Mbps-42702375.mp4"
+  }
+]
 
+export const slideImages = [
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attfvWecG7VHUDN5H_21943e30-1437-4970-be19-c4e589447964.jpg?',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attsu8dJQ7GZQ9KBk_e6b41875-d7d0-4f0b-a9d6-de43a204d412.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attSmFwf3ozkFQ7s8_1f114f58-e9f0-4e46-8414-523b5f46eb9f.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attn8nqyoAltPsBgo_803a1e4f-5fe9-4803-8825-ee3d0f9a261e.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attZ2fXMViQHRlIPa_ae2509f4-5659-4efd-a226-2981a573ba75.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attcBi9BdYFOKuBj2_2784d630-eb1a-44c9-985a-418bcaead047.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attcBi9BdYFOKuBj2_2784d630-eb1a-44c9-985a-418bcaead047.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_att8qLmAIC4VFL46d_c39da403-71a7-4d33-99d0-0f37b0e59f98.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_attMQ5hOTyxH5GGIV.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_att4uwEfqSKUgM8IT.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/preview_images/077bf4bcc49a413eaf77327ff0ab3642.thumbnail.0000000000.jpg',
+  'https://cdn.shopify.com/s/files/1/0039/6994/1568/files/preview_images/a23cca6b22494241be0568e827dc8214.thumbnail.0000000000.jpg',
+];
+
+
+export const rotateImages = [
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_0.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_1.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_2.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_3.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_4.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_5.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_6.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_7.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_8.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_9.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_10.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_11.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_12.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_13.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_14.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_15.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_16.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_17.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_17.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_19.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_20.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_21.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_22.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_23.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_24.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_25.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_26.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_27.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_28.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_29.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_30.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_31.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_32.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_33.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_34.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_35.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_36.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_37.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_38.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_39.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_40.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_41.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_42.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_43.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_44.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_45.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_46.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_47.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_48.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_49.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_50.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_51.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_52.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_53.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_54.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_55.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_56.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_57.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_58.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_59.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_60.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_61.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_62.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_63.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_64.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_65.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_66.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_67.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_68.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_69.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_70.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_71.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_72.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_73.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_74.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_75.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_76.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_77.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_78.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_79.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_80.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_81.jpg" },  
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_82.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_83.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_84.jpg" },
+  { ring:"https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_85.jpg"},
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_86.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_87.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_88.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_89.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_90.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_91.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_92.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_93.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_94.jpg" }, 
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_95.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_96.jpg" }, 
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_97.jpg" },
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_98.jpg" }, 
+  { ring: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/4Q-ER-R-WG_99.jpg" },
+
+
+
+]
+ export const centerStone = [
+      {
+        id:1,
+        icon:"",
+        name:"Round"
+      },
+       {
+        id:2,
+        icon:"",
+        name:"Oval"
+      },
+       {
+        id:3,
+        icon:"",
+        name:"Pear"
+      },
+       {
+        id:4,
+        icon:"",
+        name:"Cushion"
+      },
+       {
+        id:5,
+        icon:"",
+        name:"E Cushion"
+      },
+       {
+        id:6,
+        icon:"",
+        name:"Emerald"
+      },
+       {
+        id:7,
+        icon:"",
+        name:"Radiant"
+      },
+       {
+        id:8,
+        icon:"",
+        name:"Priencess"
+      },
+       {
+        id:8,
+        icon:"",
+        name:"Marquise"
+      },
+ ]
