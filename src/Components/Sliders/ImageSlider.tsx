@@ -10,6 +10,7 @@ interface ImageSliderProps {
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
+
     const [currentIndex, setCurrentIndex] = useState(0);
     const swiperRef = useRef<any>(null);
 
@@ -52,10 +53,13 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
                 onSlideChange={handleSlideChange}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
-                {images.map((img, i) => (
-                    <SwiperSlide key={i}>
+                {images?.map((slide, i) => (
+                    <SwiperSlide key={i} className="relative">
+                        <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#F3F3F3] bg-opacity-60 text-black px-3 py-1 rounded-md text-sm z-10">
+                            {slide.tag}
+                        </div>
                         <img
-                            src={img}
+                            src={slide.img}
                             alt={`slide-${i}`}
                             className="w-full h-[400px] object-cover transition-transform duration-500 hover:scale-150 cursor-pointer"
                         />

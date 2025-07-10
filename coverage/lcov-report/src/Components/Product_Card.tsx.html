@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>12/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>12/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -200,9 +200,11 @@
 <a name='L135'></a><a href='#L135'>135</a>
 <a name='L136'></a><a href='#L136'>136</a>
 <a name='L137'></a><a href='#L137'>137</a>
-<a name='L138'></a><a href='#L138'>138</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,25 +230,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,7 +272,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -283,7 +285,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -340,6 +342,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
 import { FaRegHeart, FaRegStar } from "react-icons/fa";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { Link } from "react-router-dom";
 &nbsp;
 interface ColorData {
   color: string;
@@ -364,22 +367,22 @@ interface ProductCardProps {
   onColorChange?: (color: string) =&gt; void;
 }
 &nbsp;
-const Product_Card: React.FC&lt;ProductCardProps&gt; = ({ data, className = "", onColorChange,}) =&gt; {
+const Product_Card: React.FC&lt;ProductCardProps&gt; = ({ data, className = "", onColorChange, }) =&gt; {
   const defaultColor = Object.keys(data.images)[0];
   const [selectedColor, setSelectedColor] = useState&lt;string&gt;(defaultColor);
   const [activeImg, setActiveImg] = useState&lt;string&gt;(
     data.images[defaultColor][0].img
   );
- 
 &nbsp;
-  const handleColorChange = (color: string) =&gt; {
-    setSelectedColor(color);
-    setActiveImg(data.images[color][0].img);
-    onColorChange?.(color);
+&nbsp;
+  const handleColorChange = <span class="fstat-no" title="function not covered" >(c</span>olor: string) =&gt; {
+<span class="cstat-no" title="statement not covered" >    setSelectedColor(color);</span>
+<span class="cstat-no" title="statement not covered" >    setActiveImg(data.images[color][0].img);</span>
+<span class="cstat-no" title="statement not covered" >    onColorChange?.(color);</span>
   };
 &nbsp;
   return (
-    &lt;div className={`card ${className}`}&gt;
+    &lt;Link to={`/products/${data.id}/${data.name}`} className={`card ${className}`}&gt;
       &lt;div className="image"&gt;
         &lt;picture&gt;
           &lt;source srcSet={activeImg} type="image/webp" /&gt;
@@ -418,9 +421,9 @@ const Product_Card: React.FC&lt;ProductCardProps&gt; = ({ data, className = "", 
                 name={`color-${data.id}`}
                 value={colorKey}
                 role="radio"
-                 aria-label={colorKey}
+                aria-label={colorKey}
                 checked={selectedColor === colorKey}
-                onChange={() =&gt; handleColorChange(colorKey)}
+                onChange={<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >handleColorChange(colorKey)}</span>
                 style={{ display: "none" }}
               /&gt;
               &lt;span
@@ -469,7 +472,7 @@ const Product_Card: React.FC&lt;ProductCardProps&gt; = ({ data, className = "", 
           &lt;a&gt;Learn more&lt;/a&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/Link&gt;
   );
 };
 &nbsp;
@@ -481,7 +484,7 @@ export default Product_Card;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-07T20:23:35.449Z
+                at 2025-07-10T11:41:06.278Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

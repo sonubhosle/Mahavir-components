@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaRegHeart, FaRegStar } from "react-icons/fa";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 interface ColorData {
   color: string;
@@ -25,13 +26,13 @@ interface ProductCardProps {
   onColorChange?: (color: string) => void;
 }
 
-const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColorChange,}) => {
+const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColorChange, }) => {
   const defaultColor = Object.keys(data.images)[0];
   const [selectedColor, setSelectedColor] = useState<string>(defaultColor);
   const [activeImg, setActiveImg] = useState<string>(
     data.images[defaultColor][0].img
   );
- 
+
 
   const handleColorChange = (color: string) => {
     setSelectedColor(color);
@@ -40,7 +41,7 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
   };
 
   return (
-    <div className={`card ${className}`}>
+    <Link to={`/products/${data.id}/${data.name}`} className={`card ${className}`}>
       <div className="image">
         <picture>
           <source srcSet={activeImg} type="image/webp" />
@@ -79,7 +80,7 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
                 name={`color-${data.id}`}
                 value={colorKey}
                 role="radio"
-                 aria-label={colorKey}
+                aria-label={colorKey}
                 checked={selectedColor === colorKey}
                 onChange={() => handleColorChange(colorKey)}
                 style={{ display: "none" }}
@@ -130,7 +131,7 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
           <a>Learn more</a>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
