@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { modelArray } from "../Data"; 
 
-interface StoneItem {
-  id: number;
-  name: string;
-  svg: string;
-}
+
 
 interface StepTwoProps {
   selectedStone: string;
@@ -23,7 +19,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ selectedStone, onStoneSelect }) => {
   };
 
   return (
-    <div className="mt-1 p-2">
+    <section className="mt-1 p-2">
       <div className="heading p-10 flex justify-center flex-col text-center">
         <h1 className="text-4xl text-black font-semibold pb-3">
           Select your Stone Shape and Quality
@@ -64,7 +60,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ selectedStone, onStoneSelect }) => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

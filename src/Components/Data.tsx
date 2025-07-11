@@ -786,19 +786,40 @@ export const modelArray = [
 export const checkout = [
     {
     id: 1,
-    name: "Lab Diamond",
-    svg: `<svg class="block w-14 h-14 mx-auto" aria-hidden="true" focusable="false" viewBox="0 0 36 36"><svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3711 31.6668L26.3115 26.7114H36.7596L41.7 31.6668L31.5306 40.7114L21.3711 31.6668Z" stroke="currentColor" stroke-miterlimit="10"></path><path d="M29.6836 34.6301L26.3887 31.6976L28.3073 29.7737" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M31.5312 40.5869L36.0564 31.7108L32.5867 26.7266" stroke="currentColor" stroke-miterlimit="10"></path><path d="M19.8633 11.6667H29.2485" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M27.3716 18.563V11.6667" stroke="currentColor" stroke-miterlimit="10"></path><path d="M21.7402 11.6667V18.563" stroke="currentColor" stroke-miterlimit="10"></path><path d="M21.74 18.563L14.1189 33.805C13.3084 35.4261 14.4872 37.3334 16.2997 37.3334H23.7698M27.3711 18.563L30.1811 24.3413" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M21.7861 28.4482C22.0623 28.4482 22.2861 28.2244 22.2861 27.9482C22.2861 27.6721 22.0623 27.4482 21.7861 27.4482L21.7861 28.4482ZM19.8882 27.9483L19.8882 28.4483H19.8882L19.8882 27.9483ZM16.8042 28.4483L19.8882 28.4483L19.8882 27.4483L16.8042 27.4483L16.8042 28.4483ZM19.8882 28.4483L21.7861 28.4482L21.7861 27.4482L19.8882 27.4483L19.8882 28.4483Z" fill="currentColor"></path></svg></svg>    `
+    label: "Lab Diamond",
+    svg: "https://i.postimg.cc/fTXPjF62/svgviewer-png-output-1.png",
+    content:[
+     {   
+     value: ["1.0", "1.5","2.0","2.5","3.0"],
+     buttonText:"See Full Inventory"
+      }
+    ],
+    carat:"1.5 ct",
+    color:"D - F",
+    clarity:"VS+",
+    link:"Choose your won center stone"
   },
 
   {
     id: 2,
-    name: "Moissanite",
-    svg: `<svg class="block w-14 h-14 mx-auto" aria-hidden="true" focusable="false" viewBox="0 0 36 36"><svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3711 31.6668L26.3115 26.7114H36.7596L41.7 31.6668L31.5306 40.7114L21.3711 31.6668Z" stroke="currentColor" stroke-miterlimit="10"></path><path d="M29.6836 34.6301L26.3887 31.6976L28.3073 29.7737" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M31.5312 40.5869L36.0564 31.7108L32.5867 26.7266" stroke="currentColor" stroke-miterlimit="10"></path><path d="M19.8633 11.6667H29.2485" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M27.3716 18.563V11.6667" stroke="currentColor" stroke-miterlimit="10"></path><path d="M21.7402 11.6667V18.563" stroke="currentColor" stroke-miterlimit="10"></path><path d="M21.74 18.563L14.1189 33.805C13.3084 35.4261 14.4872 37.3334 16.2997 37.3334H23.7698M27.3711 18.563L30.1811 24.3413" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M21.7861 28.4482C22.0623 28.4482 22.2861 28.2244 22.2861 27.9482C22.2861 27.6721 22.0623 27.4482 21.7861 27.4482L21.7861 28.4482ZM19.8882 27.9483L19.8882 28.4483H19.8882L19.8882 27.9483ZM16.8042 28.4483L19.8882 28.4483L19.8882 27.4483L16.8042 27.4483L16.8042 28.4483ZM19.8882 28.4483L21.7861 28.4482L21.7861 27.4482L19.8882 27.4483L19.8882 28.4483Z" fill="currentColor"></path></svg></svg>`
+    label: "Moissanite",
+    svg:"https://i.postimg.cc/fTXPjF62/svgviewer-png-output-1.png",
+     content:[
+     {   
+     value: ["1.0", "1.5","2.0","2.5","3.0","3.5","4.0","4.5","5.0","5.5"],
+     buttonText:"See Full Inventory"
+      }
+    ],
+    carat:"1.5 ct",
+    color:"D - F",
+    clarity:"VVS",
+    link:"Choose your won center stone"
   },
     {
     id: 3,
-    name: "Natural Diamonds ",
-    svg: `<svg class="block w-14 h-14 mx-auto" aria-hidden="true" focusable="false" viewBox="0 0 36 36"><svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.983 24.5301C26.085 24.7867 26.3757 24.912 26.6323 24.81C26.8889 24.708 27.0142 24.4173 26.9122 24.1607L25.983 24.5301ZM24.5 19.7131H24V19.8088L24.0354 19.8978L24.5 19.7131ZM26.9122 24.1607C26.4453 22.9861 26.1874 22.4047 25.9308 21.8265C25.6772 21.2549 25.425 20.6864 24.9646 19.5284L24.0354 19.8978C24.5023 21.0724 24.7602 21.6538 25.0168 22.232C25.2704 22.8036 25.5226 23.372 25.983 24.5301L26.9122 24.1607ZM25 19.7131C25 17.3572 26.91 15.4473 29.2658 15.4473V14.4473C26.3577 14.4473 24 16.805 24 19.7131H25ZM29.2658 15.4473H34.0386V14.4473H29.2658V15.4473Z" fill="currentColor"></path><path d="M24.5 38C21.83 38 19.2199 37.2082 16.9998 35.7248C14.7797 34.2414 13.0494 32.133 12.0276 29.6662C11.0058 27.1994 10.7385 24.485 11.2594 21.8663C11.7803 19.2475 13.066 16.8421 14.9541 14.9541C16.8421 13.066 19.2475 11.7803 21.8663 11.2594C24.485 10.7385 27.1994 11.0058 29.6662 12.0276C32.133 13.0494 34.2414 14.7797 35.7248 16.9998C37.2082 19.2199 38 21.83 38 24.5" stroke="currentColor" stroke-linecap="round"></path><path d="M11.1831 23.4982C11.6013 24.3773 12.2242 24.6743 13.0136 24.645C14.0429 24.6068 14.6526 23.5467 14.8624 23.1818C15.1475 22.6863 15.1447 22.3984 15.4779 21.0282C15.6644 20.2613 15.8379 19.6414 15.9548 19.2397C16.8954 19.0807 17.836 18.9218 18.7766 18.7628C19.8681 18.3723 20.6771 17.6257 20.6843 16.8551C20.6925 15.9855 19.6769 15.3763 18.6972 14.7883C17.7897 14.2438 16.949 13.9958 16.4108 13.8743" stroke="currentColor" stroke-miterlimit="10"></path><path d="M12.8403 31.0123C12.9249 30.5361 13.1116 29.8018 13.5706 29.0168C13.9339 28.3957 14.3533 27.6754 14.8424 27.7052C15.4122 27.7399 15.7774 28.7744 16.0827 29.6388C16.4145 30.5785 16.5296 31.4091 16.5712 31.9976C16.5831 33.0886 16.5952 34.1799 16.6071 35.2709" stroke="currentColor" stroke-miterlimit="10"></path><path d="M21.3711 31.6668L26.3115 26.7114H36.7596L41.7 31.6668L31.5306 40.7114L21.3711 31.6668Z" stroke="currentColor" stroke-miterlimit="10"></path><path d="M29.6836 34.6301L26.3887 31.6976L28.3073 29.7737" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M31.5312 40.5869L36.0564 31.7108L32.5867 26.7266" stroke="currentColor" stroke-miterlimit="10"></path></svg></svg>`
+    label: "Natural Diamonds ",
+    svg: "https://i.postimg.cc/L6n99Hgq/svgviewer-png-output-3.png",
+    link:"*Natural diamond need to be specifically selected by you"
   },
 
 ]
@@ -819,3 +840,95 @@ export const toggleArray = [
 
 ]
 
+
+
+export const relatedproducts = [
+  {
+    id: "1",
+    name: "The Ashley",
+    price: "$800",
+    intrest: "Pay in 4 interest-free installments of $200 ",
+    description: "Introducing The Twig, Keyzar's flagship engagement ring, inspired by the idea of adding new branches to your family tree. This exquisite piece features a dainty, twig-like band that gently caresses the wearer's ring finger, symbolizing growth and connection. The soft accents add a subtle sparkle, while the delicate band beautifully emphasizes the size and brilliance of the center stone. The Twig is a perfect blend of nature's elegance and modern sophistication, making it a timeless choice for celebrating your love and commitment.",
+       images: {
+      silver: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-WG_0_3x_jpg_2969bcf7-54a9-497a-be2e-a853e6a9e6a3.webp",
+          color: "#C0C0C0"
+        }
+      ],
+      gold: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-YG_0_3x_jpg_a8179999-e189-404b-b899-e8cb5c9b4483.webp",
+          color: "#FFD700"
+        }
+      ],
+      red: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-RG_0_3x_jpg_8def348b-c02e-4007-9179-8b388cae319a.webp",
+          color: "#F2998E"
+        }
+      ]
+    }
+
+
+  },
+    {
+    id: "2",
+    name: "The Ashley",
+    price: "$800",
+    intrest: "Pay in 4 interest-free installments of $200 ",
+    description: "Introducing The Twig, Keyzar's flagship engagement ring, inspired by the idea of adding new branches to your family tree. This exquisite piece features a dainty, twig-like band that gently caresses the wearer's ring finger, symbolizing growth and connection. The soft accents add a subtle sparkle, while the delicate band beautifully emphasizes the size and brilliance of the center stone. The Twig is a perfect blend of nature's elegance and modern sophistication, making it a timeless choice for celebrating your love and commitment.",
+       images: {
+      silver: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-WG_0_3x_jpg_2969bcf7-54a9-497a-be2e-a853e6a9e6a3.webp",
+          color: "#C0C0C0"
+        }
+      ],
+      gold: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-YG_0_3x_jpg_a8179999-e189-404b-b899-e8cb5c9b4483.webp",
+          color: "#FFD700"
+        }
+      ],
+      red: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-RG_0_3x_jpg_8def348b-c02e-4007-9179-8b388cae319a.webp",
+          color: "#F2998E"
+        }
+      ]
+    }
+
+
+  },
+    {
+    id: "3",
+    name: "The Ashley",
+    price: "$800",
+    intrest: "Pay in 4 interest-free installments of $200 ",
+    description: "Introducing The Twig, Keyzar's flagship engagement ring, inspired by the idea of adding new branches to your family tree. This exquisite piece features a dainty, twig-like band that gently caresses the wearer's ring finger, symbolizing growth and connection. The soft accents add a subtle sparkle, while the delicate band beautifully emphasizes the size and brilliance of the center stone. The Twig is a perfect blend of nature's elegance and modern sophistication, making it a timeless choice for celebrating your love and commitment.",
+       images: {
+      silver: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-WG_0_3x_jpg_2969bcf7-54a9-497a-be2e-a853e6a9e6a3.webp",
+          color: "#C0C0C0"
+        }
+      ],
+      gold: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-YG_0_3x_jpg_a8179999-e189-404b-b899-e8cb5c9b4483.webp",
+          color: "#FFD700"
+        }
+      ],
+      red: [
+        {
+          img: "https://cdn.shopify.com/s/files/1/0039/6994/1568/files/391Q-R-RG_0_3x_jpg_8def348b-c02e-4007-9179-8b388cae319a.webp",
+          color: "#F2998E"
+        }
+      ]
+    }
+
+
+  },
+
+]

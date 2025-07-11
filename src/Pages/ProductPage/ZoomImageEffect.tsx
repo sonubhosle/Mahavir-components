@@ -41,20 +41,25 @@ const ZoomImageEffect: React.FC<ZoomImageProps> = ({
   };
 
   return (
-    <div
+    <section
       ref={containerRef}
       className={`overflow-hidden cursor-zoom-in ${className} w-full h-full`}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <img
-        src={src}
-        alt={alt}
-        className={`w-full h-full object-cover transition-transform duration-300 ease-out`}
-        style={{ transform: isHovered ? `scale(${scale})` : 'scale(1)' }}
-      />
-    </div>
+      <picture>
+        <source srcSet={src} type="image/webp" />
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="w-full h-full  object-cover transition-transform duration-300 ease-out"
+          style={{ transform: isHovered ? `scale(${scale})` : 'scale(1)' }}
+        />
+
+      </picture>
+    </section>
   );
 };
 

@@ -17,16 +17,16 @@ jest.mock('../Components/Stepper/Stepper', () => ({ activeStep, onStepClick }: a
   </div>
 ));
 
-jest.mock('../Components/StoneSelectorModal', () => ({ onSelect, onClose }: any) => (
+jest.mock('../Components/Modal/StoneSelectorModal', () => ({ onSelect, onClose }: any) => (
   <div data-testid="modal">
     <button onClick={() => onSelect('Diamond')}>Select Stone</button>
     <button onClick={onClose}>Close</button>
   </div>
 ));
 
-jest.mock('../Components/StepOne', () => () => <div data-testid="step-one">Step 1 Content</div>);
-jest.mock('../Components/StepTwo', () => () => <div data-testid="step-two">Step 2 Content</div>);
-jest.mock('../Components/StepThree', () => () => <div data-testid="step-three">Step 3 Content</div>);
+jest.mock('../Components/Steps/StepOne', () => () => <div data-testid="step-one">Step 1 Content</div>);
+jest.mock('../Components/Steps/StepTwo', () => () => <div data-testid="step-two">Step 2 Content</div>);
+jest.mock('../Components/Steps/StepThree', () => () => <div data-testid="step-three">Step 3 Content</div>);
 
 describe('App Component', () => {
   test('renders stepper and step 1 content by default', () => {

@@ -10,10 +10,16 @@ const config: Config = {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
-  moduleNameMapper: {
-    // ⛔ Fix for CSS imports in components
-    '\\.(css|less|scss|sass)$': '<rootDir>/__mocks__/styleMock.js',
-  },
+  transformIgnorePatterns: [
+    "/node_modules/(?!(swiper)/)"
+  ],
+moduleNameMapper: {
+  '\\.(css|less|scss|sass)$': '<rootDir>/__mocks__/styleMock.js',
+
+  // 🧩 specifically mock Swiper CSS
+  '^swiper/css$': '<rootDir>/__mocks__/styleMock.js',
+  '^swiper/css/.*$': '<rootDir>/__mocks__/styleMock.js',
+},
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**'],
 };

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import StoneSelectorModal from '../Components/StoneSelectorModal';
+import StoneSelectorModal from '../Components/Modal/StoneSelectorModal';
 import { modelArray } from '../Components/Data';
 
 describe('StoneSelectorModal Component', () => {

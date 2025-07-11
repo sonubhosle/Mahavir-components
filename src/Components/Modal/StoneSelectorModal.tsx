@@ -15,7 +15,7 @@ interface StoneSelectorModalProps {
 
 const StoneSelectorModal: React.FC<StoneSelectorModalProps> = ({ onSelect, onClose }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-overlay z-50">
+    <section className="fixed inset-0 flex items-center justify-center bg-overlay z-50">
       <div className="bg-white p-6 w-[600px] rounded-lg shadow-lg space-y-4 relative">
         {/* Header */}
         <div className="flex items-center justify-center flex-col">
@@ -47,7 +47,7 @@ const StoneSelectorModal: React.FC<StoneSelectorModalProps> = ({ onSelect, onClo
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

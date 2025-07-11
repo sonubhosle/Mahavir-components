@@ -20,11 +20,11 @@ interface ProductData {
 
 const Products: React.FC = () => {
   return (
-    <div className="product_grid">
+    <section className="product_grid">
       {products.map((prod: ProductData, index: number) => (
         <Product_Card data={prod} key={prod.id || index} />
       ))}
-    </div>
+    </section>
   );
 };
 

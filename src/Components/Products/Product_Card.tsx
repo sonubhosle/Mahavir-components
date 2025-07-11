@@ -41,17 +41,19 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
   };
 
   return (
-    <NavLink to={`/products/${data.id}/${data.name}`} className={`card ${className}`}>
+    <section className={`card ${className}`}>
       <div className="image">
-        <picture>
-          <source srcSet={activeImg} type="image/webp" />
-          <img
-            src={activeImg}
-            loading="lazy"
-            alt={data.name}
-            className="w-full h-auto"
-          />
-        </picture>
+        <NavLink to={`/products/${data.id}/${data.name}`}>
+          <picture>
+            <source srcSet={activeImg} type="image/webp" />
+            <img
+              src={activeImg}
+              loading="lazy"
+              alt={data.name}
+              className="w-full h-auto"
+            />
+          </picture>
+        </NavLink>
         <div className="wishlist">
           <FaRegHeart size={28} />
         </div>
@@ -70,8 +72,8 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
       </div>
 
       {/* Color Swatches */}
-      <div className="details flex justify-between">
-        <div className="title">{data.name}</div>
+      <section className="details flex justify-between">
+        <h1 className="title">{data.name}</h1>
         <div className="radio-button_group flex gap-2">
           {Object.entries(data.images).map(([colorKey, [colorData]]) => (
             <label key={colorKey} style={{ cursor: "pointer", position: "relative" }}>
@@ -115,14 +117,14 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
             </label>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="price">{data.price}</div>
+      <p className="price">{data.price}</p>
 
       <div className="hover_details mt-7">
         <div className="btns flex items-center justify-between">
-          <button className="more_info">More info</button>
-          <button className="add_diamond">
+          <button className="more_info cursor-pointer">More info</button>
+          <button className="add_diamond cursor-pointer">
             Add Diamond <IoIosArrowForward size={18} />
           </button>
         </div>
@@ -131,7 +133,7 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
           <Link to="/" className="learn-more-link">Learn more</Link>
         </div>
       </div>
-    </NavLink>
+    </section>
   );
 };
 

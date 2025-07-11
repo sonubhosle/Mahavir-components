@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import StepTwo from '../Components/StepTwo';
+import StepTwo from '../Components/Steps/StepTwo'
 import { modelArray } from '../Components/Data';
 
 describe('StepTwo Component', () => {

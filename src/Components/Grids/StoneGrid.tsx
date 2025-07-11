@@ -23,7 +23,7 @@ const StoneGrid: React.FC<StoneGridProps> = ({
 
   useEffect(() => {
     if (stones.length > 0) {
-      onSelectIndex(activeIndex); // Ensure parent has initial selection
+      onSelectIndex(activeIndex);
     }
   }, [stones]);
 
@@ -32,7 +32,7 @@ const StoneGrid: React.FC<StoneGridProps> = ({
   };
 
   const renderStoneItem = (item: StoneItem, idx: number) => (
-    <div
+    <section
       key={item.id}
       role="button"
       tabIndex={0}
@@ -46,55 +46,46 @@ const StoneGrid: React.FC<StoneGridProps> = ({
         className="w-10 h-10"
         dangerouslySetInnerHTML={{ __html: item.icon }}
       />
-      <p className="text-xs mt-1">{item.name}</p>
-    </div>
+<p className="text-xs sm:text-[11px] md:text-sm mt-1 text-center font-normal">{item.name}</p>
+    </section>
   );
 
-  const hasMoreThanFive = stones.length > 5;
-  const firstFour = hasMoreThanFive ? stones.slice(0, 4) : [];
+  const hasMoreThanFive = stones.length > 6;
+  const firstFour = hasMoreThanFive ? stones.slice(0, 4) : stones;
   const remaining = hasMoreThanFive ? stones.slice(4) : [];
 
   return (
-    <div className="pt-5">
-      <div className="grid grid-cols-5 gap-2">
-        {hasMoreThanFive
-          ? (
-              <>
-                {firstFour.map((item, idx) => renderStoneItem(item, idx))}
+    <section className="pt-5">
+      {/* First row */}
+      <div className="grid grid-cols-5 gap-0">
+        {firstFour.map((item, idx) => renderStoneItem(item, idx))}
 
-                {/* Show More toggle in 5th spot */}
-                <div
-                  onClick={() => setShowMore(!showMore)}
-                  className="w-[80px] h-[90px] border-2 border-gray-300 rounded-xl flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
-                >
-                  <button
-                    aria-expanded={showMore}
-                    className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-white transition"
-                    title={showMore ? "Hide" : "Show More"}
-                  >
-                    {showMore ? <GoDash /> : <FaPlus />}
-                  </button>
-                </div>
-              </>
-            )
-          : (
-              stones.map((item, idx) => renderStoneItem(item, idx))
-            )}
+        {hasMoreThanFive && (
+          <div
+            onClick={() => setShowMore(!showMore)}
+            className="w-[80px] h-[90px] border-2 border-gray-300 rounded-xl flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
+          >
+            <button
+              aria-expanded={showMore}
+              className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-white transition"
+              title={showMore ? "Hide" : "Show More"}
+            >
+              {showMore ? <GoDash /> : <FaPlus />}
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* Only if more than 5 */}
+      {/* Expanded grid */}
       {hasMoreThanFive && (
         <div
-          className={`grid grid-cols-5 gap-2 mt-4 transition-all duration-500 ${
-            showMore ? "opacity-100 max-h-40" : "opacity-0 max-h-0 overflow-hidden"
-          }`}
+          className={`grid grid-cols-5 gap-0 mt-4 transition-all duration-500 ease-in-out ${showMore ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+            }`}
         >
-          {remaining.map((item, idx) =>
-            renderStoneItem(item, idx + 4) // index continues
-          )}
+          {remaining.map((item, idx) => renderStoneItem(item, idx + 4))}
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

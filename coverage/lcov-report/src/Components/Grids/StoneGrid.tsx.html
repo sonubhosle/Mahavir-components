@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
@@ -155,16 +155,7 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -224,8 +215,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,12 +233,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -257,7 +240,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,7 +272,7 @@ const StoneGrid: React.FC&lt;StoneGridProps&gt; = <span class="cstat-no" title="
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (stones.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      onSelectIndex(activeIndex); </span>// Ensure parent has initial selection
+<span class="cstat-no" title="statement not covered" >      onSelectIndex(activeIndex);</span>
     }
   }, [stones]);
 &nbsp;
@@ -299,7 +281,7 @@ const StoneGrid: React.FC&lt;StoneGridProps&gt; = <span class="cstat-no" title="
   };
 &nbsp;
   const renderStoneItem = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>tem: StoneItem, idx: number) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div</span>
+<span class="cstat-no" title="statement not covered" >    &lt;section</span>
       key={item.id}
       role="button"
       tabIndex={0}
@@ -313,55 +295,46 @@ const StoneGrid: React.FC&lt;StoneGridProps&gt; = <span class="cstat-no" title="
         className="w-10 h-10"
         dangerouslySetInnerHTML={{ __html: item.icon }}
       /&gt;
-      &lt;p className="text-xs mt-1"&gt;{item.name}&lt;/p&gt;
-    &lt;/div&gt;
+&lt;p className="text-xs sm:text-[11px] md:text-sm mt-1 text-center font-normal"&gt;{item.name}&lt;/p&gt;
+    &lt;/section&gt;
   );
 &nbsp;
-  const hasMoreThanFive = <span class="cstat-no" title="statement not covered" >stones.length &gt; 5;</span>
-  const firstFour = <span class="cstat-no" title="statement not covered" >hasMoreThanFive ? stones.slice(0, 4) : [];</span>
+  const hasMoreThanFive = <span class="cstat-no" title="statement not covered" >stones.length &gt; 6;</span>
+  const firstFour = <span class="cstat-no" title="statement not covered" >hasMoreThanFive ? stones.slice(0, 4) : stones;</span>
   const remaining = <span class="cstat-no" title="statement not covered" >hasMoreThanFive ? stones.slice(4) : [];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div className="pt-5"&gt;
-      &lt;div className="grid grid-cols-5 gap-2"&gt;
-        {hasMoreThanFive
-          ? (
-              &lt;&gt;
-                {firstFour.map(<span class="fstat-no" title="function not covered" >(i</span>tem, idx) =&gt; <span class="cstat-no" title="statement not covered" >renderStoneItem(item, idx))</span>}
+    &lt;section className="pt-5"&gt;
+      {/* First row */}
+      &lt;div className="grid grid-cols-5 gap-0"&gt;
+        {firstFour.map(<span class="fstat-no" title="function not covered" >(i</span>tem, idx) =&gt; <span class="cstat-no" title="statement not covered" >renderStoneItem(item, idx))</span>}
 &nbsp;
-                {/* Show More toggle in 5th spot */}
-                &lt;div
-                  onClick={<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >setShowMore(!showMore)}</span>
-                  className="w-[80px] h-[90px] border-2 border-gray-300 rounded-xl flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
-                &gt;
-                  &lt;button
-                    aria-expanded={showMore}
-                    className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-white transition"
-                    title={showMore ? "Hide" : "Show More"}
-                  &gt;
-                    {showMore ? &lt;GoDash /&gt; : &lt;FaPlus /&gt;}
-                  &lt;/button&gt;
-                &lt;/div&gt;
-              &lt;/&gt;
-            )
-          : (
-              stones.map(<span class="fstat-no" title="function not covered" >(i</span>tem, idx) =&gt; <span class="cstat-no" title="statement not covered" >renderStoneItem(item, idx))</span>
-            )}
+        {hasMoreThanFive &amp;&amp; (
+          &lt;div
+            onClick={<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >setShowMore(!showMore)}</span>
+            className="w-[80px] h-[90px] border-2 border-gray-300 rounded-xl flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
+          &gt;
+            &lt;button
+              aria-expanded={showMore}
+              className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-white transition"
+              title={showMore ? "Hide" : "Show More"}
+            &gt;
+              {showMore ? &lt;GoDash /&gt; : &lt;FaPlus /&gt;}
+            &lt;/button&gt;
+          &lt;/div&gt;
+        )}
       &lt;/div&gt;
 &nbsp;
-      {/* Only if more than 5 */}
+      {/* Expanded grid */}
       {hasMoreThanFive &amp;&amp; (
         &lt;div
-          className={`grid grid-cols-5 gap-2 mt-4 transition-all duration-500 ${
-            showMore ? "opacity-100 max-h-40" : "opacity-0 max-h-0 overflow-hidden"
-          }`}
+          className={`grid grid-cols-5 gap-0 mt-4 transition-all duration-500 ease-in-out ${showMore ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+            }`}
         &gt;
-          {remaining.map(<span class="fstat-no" title="function not covered" >(i</span>tem, idx) =&gt;
-<span class="cstat-no" title="statement not covered" >            renderStoneItem(item, idx + 4) </span>// index continues
-          )}
+          {remaining.map(<span class="fstat-no" title="function not covered" >(i</span>tem, idx) =&gt; <span class="cstat-no" title="statement not covered" >renderStoneItem(item, idx + 4))</span>}
         &lt;/div&gt;
       )}
-    &lt;/div&gt;
+    &lt;/section&gt;
   );
 };
 &nbsp;
@@ -373,7 +346,7 @@ const StoneGrid: React.FC&lt;StoneGridProps&gt; = <span class="cstat-no" title="
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-10T14:45:37.720Z
+                at 2025-07-11T19:41:29.230Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -43,25 +43,28 @@ const VideoSlider: React.FC<VideoSliderProps> = ({ videos }) => {
   };
 
   return (
-    <div className="relative">
+    <section className="relative">
       <Swiper
         modules={[Navigation]}
         navigation
         loop={false}
         onSlideChange={handleSlideChange}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-         className='h-full w-full'
+        className='h-full w-full'
       >
         {videos.map((video) => (
           <SwiperSlide key={video.id}>
-            <video
-              src={video.gif}
-              muted
-              autoPlay
-              loop
-              playsInline
-              className="w-full h-full object-cover cursor-pointer"
-            />
+          <video
+  data-testid="video-element"
+  src={video.gif}
+  muted
+  autoPlay
+  loop
+  playsInline
+  className="w-full h-full object-cover cursor-pointer"
+/>
+
+
           </SwiperSlide>
         ))}
       </Swiper>
@@ -85,7 +88,7 @@ const VideoSlider: React.FC<VideoSliderProps> = ({ videos }) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

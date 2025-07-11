@@ -45,7 +45,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     };
 
     return (
-        <div className="relative">
+        <section className="relative">
             <Swiper
                 modules={[Navigation]}
                 navigation
@@ -59,11 +59,15 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
                         <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#F3F3F3] bg-opacity-60 text-black px-3 py-1 rounded-md text-sm z-10">
                             {slide.tag}
                         </div>
-                        <img
+                        <picture>
+                            <source srcSet={slide.img} type="image/webp" />
+                              <img
+                              loading='lazy'
                             src={slide.img}
                             alt={`slide-${i}`}
                             className="w-full h-full object-cover transition-transform duration-500 hover:scale-150 cursor-pointer"
                         />
+                        </picture>
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -87,7 +91,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
                     );
                 })}
             </div>
-        </div>
+        </section>
     );
 };
 

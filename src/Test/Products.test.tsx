@@ -1,10 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import Products from '../Components/Products';
+import Products from '../Components/Products/Products';
 
 // Mock the Product_Card component to isolate the Products component test
-jest.mock('../Components/Product_Card', () => ({ data }: any) => (
-  <div data-testid="product-card">{data.name}</div>
-));
+jest.mock('../Components/Products/Product_Card', () => ({
+  __esModule: true,
+  default: ({ data }: any) => <div data-testid="product-card">{data.name}</div>,
+}));
+
 
 // Mock the products data
 jest.mock('../Components/Data', () => ({
