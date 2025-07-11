@@ -30,7 +30,42 @@ const Accordion: React.FC = () => {
           id="accordion-content-1"
           className={`overflow-hidden transition-all duration-300 text-sm text-gray-600 px-2 ${openId === 1 ? "max-h-[1000px] py-4" : "max-h-0 py-0"}`}
         >
-          {/* ... (Same ring details content) */}
+
+          <div className="space-y-6 text-sm text-gray-800">
+            <section>
+              <h3 className="text-base font-semibold mb-2">Details</h3>
+              <div className="grid grid-cols-2 gap-y-2">
+                <p className="text-gray-500">SKU</p>
+                <p className="font-medium">4Q-ER-R-WG-14</p>
+                <p className="text-gray-500">Width</p>
+                <p className="font-medium">1.3mm</p>
+                <p className="text-gray-500">Center Stone Shape</p>
+                <p className="font-medium">Round</p>
+                <p className="text-gray-500">Material</p>
+                <p className="font-medium">14k White Gold</p>
+                <p className="text-gray-500">Style</p>
+                <p className="font-medium">Polished</p>
+                <p className="text-gray-500">Profile</p>
+                <p className="font-medium">Medium</p>
+              </div>
+            </section>
+            <section>
+              <h3 className="text-base font-semibold mb-2">Side Stones</h3>
+              <div className="grid grid-cols-2 gap-y-2">
+                <p className="text-gray-500">Average Color</p>
+                <p className="font-medium">D-F</p>
+                <p className="text-gray-500">Average Clarity</p>
+                <p className="font-medium">VVS</p>
+                <p className="text-gray-500">Shape</p>
+                <p className="font-medium">Round</p>
+                <p className="text-gray-500">Origin</p>
+                <p className="font-medium">Lab Diamonds</p>
+                <p className="text-gray-500">Approx. Total Carat</p>
+                <p className="font-medium">0.03ct</p>
+              </div>
+            </section>
+          </div>
+
         </div>
       </section>
 
