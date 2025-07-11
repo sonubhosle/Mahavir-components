@@ -50,6 +50,7 @@ const VideoSlider: React.FC<VideoSliderProps> = ({ videos }) => {
         loop={false}
         onSlideChange={handleSlideChange}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
+         className='h-full w-full'
       >
         {videos.map((video) => (
           <SwiperSlide key={video.id}>
@@ -59,7 +60,7 @@ const VideoSlider: React.FC<VideoSliderProps> = ({ videos }) => {
               autoPlay
               loop
               playsInline
-              className="w-full h-[400px] object-cover cursor-pointer"
+              className="w-full h-full object-cover cursor-pointer"
             />
           </SwiperSlide>
         ))}

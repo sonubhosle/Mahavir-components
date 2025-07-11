@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { iconsArray } from "./Data";
+import { iconsArray } from "../Data";
 import { FaRegCircle } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
 import { LiaLifeRingSolid } from "react-icons/lia";
-import Products from "./Products";
+import Products from "../Products/Products";
 
 interface IconItem {
   name: string;

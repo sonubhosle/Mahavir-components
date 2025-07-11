@@ -1,12 +1,15 @@
 import React, { Suspense, lazy, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Loader from './Components/Loader';
 import Stepper from './Components/Stepper/Stepper';
-import StoneSelectorModal from './Components/StoneSelectorModal';
-import StepOne from './Components/StepOne';
-import StepTwo from './Components/StepTwo';
-import StepThree from './Components/StepThree';
+import StoneSelectorModal from './Components/Modal/StoneSelectorModal';
+import StepOne from './Components/Steps/StepOne';
+import StepTwo from './Components/Steps/StepTwo';
+import StepThree from './Components/Steps/StepThree';
 
 const Product_Details = lazy(() => import('./Pages/ProductPage/Product_Details'));
 const NotFound = lazy(() => import('./Components/NotFound'));
@@ -45,13 +48,13 @@ const App: React.FC = () => {
       if (activeStep === 1) {
         setShowModal(true);
       } else {
-        alert("Please complete Step 1 first.");
+        toast.warn("Please complete Step 1 first.")
       }
     } else if (id === 3) {
       if (activeStep === 2 && stoneSelected) {
         setActiveStep(3);
       } else {
-        alert("Please complete Step 2 by selecting a stone.");
+        toast.warn("Please complete Step 2 by selecting a stone.");
       }
     }
   };
@@ -65,7 +68,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Suspense fallback={<Loader />}>
-        <div className="w-[94%] mx-auto mt-6">
+        <div className="w-[90%] lg:w-[92%] mx-auto mt-6">
           {/* Stepper Global */}
           <Stepper
             activeStep={activeStep}
@@ -100,6 +103,7 @@ const App: React.FC = () => {
           />
         )}
       </Suspense>
+      <ToastContainer />
     </Router>
   );
 };

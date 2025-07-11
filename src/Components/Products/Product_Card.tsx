@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaRegHeart, FaRegStar } from "react-icons/fa";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 interface ColorData {
   color: string;
@@ -41,7 +41,7 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
   };
 
   return (
-    <Link to={`/products/${data.id}/${data.name}`} className={`card ${className}`}>
+    <NavLink to={`/products/${data.id}/${data.name}`} className={`card ${className}`}>
       <div className="image">
         <picture>
           <source srcSet={activeImg} type="image/webp" />
@@ -128,10 +128,10 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
         </div>
         <div className="desc">
           {data.intrest}
-          <a>Learn more</a>
+          <Link to="/" className="learn-more-link">Learn more</Link>
         </div>
       </div>
-    </Link>
+    </NavLink>
   );
 };
 

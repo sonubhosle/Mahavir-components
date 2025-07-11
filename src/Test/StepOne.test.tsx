@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import StepOne from '../Components/StepOne';
+import StepOne from '../Components/Steps/StepOne';
 
 // Mocking Products component since we test StepOne in isolation
 jest.mock('../Components/Products', () => () => <div data-testid="products-component">Products Loaded</div>);

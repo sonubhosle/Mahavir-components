@@ -1,9 +1,12 @@
 import React, { useState, useRef } from 'react';
+interface DiamondRingPreviewProps {
+  className?: string;
+}
 
-const DiamondRingPreview = () => {
+const DiamondRingPreview: React.FC<DiamondRingPreviewProps> = ({className}) => {
     const displayOptions = [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0];
 
-    // Displayed → Actual scaling values (fine-tuned to prevent oversize)
+    // Displayed → Actul scaling values (fine-tuned to prevent oversize)
     const actualScaleMap: Record<number, number> = {
         1.0: 1.0,
         1.5: 1.15,
@@ -13,7 +16,7 @@ const DiamondRingPreview = () => {
         3.5: 1.6,
         4.0: 1.75,
         4.5: 1.85,
-        5.0: 2.0, // Prevent full-screen scale
+        5.0: 2.0, 
     };
 
     const [displayScale, setDisplayScale] = useState(1.0);
@@ -50,7 +53,7 @@ const DiamondRingPreview = () => {
 
     return (
         <div className="relative">
-            <img src="https://i.postimg.cc/RhwdscR8/hand-with-setting-23-F6-JYZ6.png" alt="Hand with Ring" className="w-full object-cover" />
+            <img src="https://i.postimg.cc/RhwdscR8/hand-with-setting-23-F6-JYZ6.png" alt="Hand with Ring" className={`w-full h-full object-cover ${className || ""}`} />
             <div className="absolute top-4  w-full  z-10 text-center ">
                 <h1 className="text-lg text-white font-bold">Diamond Carat Size Guide</h1>
                 <p className="text-sm text-white">*The setting in the image is for reference only</p>

@@ -23,59 +23,73 @@ const steps: Step[] = [
 
 const Stepper: React.FC<StepperProps> = ({ activeStep, stoneSelected, onStepClick }) => {
   return (
-    <div className="w-full grid grid-cols-3 relative ">
+    <div className="w-full grid grid-cols-3 relative">
       {steps.map((step, index) => {
         const Icon = step.icon;
+        const isActive = activeStep === step.id;
 
         return (
           <div
             key={step.id}
-            className={`relative flex items-center cursor-pointer -ml-1.5 p-4 border-2 transition-all duration-300 
-              ${activeStep === step.id ? "border-black bg-white" : "border-gray-300 bg-gray-50"} 
-              ${index === 0 ? "rounded-l-lg z-20" : ""} 
-              ${index === steps.length - 1 ? "rounded-r-lg" : ""}
-              ${step.id === 3 && (!stoneSelected || activeStep < 2) ? "pointer-events-none opacity-50" : ""}`}
+            className={`relative flex items-center cursor-pointer p-2 lg:p-4 border-2 transition-all duration-300
+    ${isActive ? "border-black bg-white" : "border-gray-300 bg-gray-50"}
+    ${index === 0 ? "rounded-l-lg z-20" : ""}
+    ${index === steps.length - 1 ? "rounded-r-lg" : ""}
+    ${step.id === 3 && (!stoneSelected || activeStep < 2) ? "pointer-events-none opacity-50" : ""}`}
             onClick={() => onStepClick(step.id)}
           >
-            <div className={`justify-between flex w-full ${step.id === 1 ? "pl-3" : "pl-15"}`}>
-              <div className="left flex gap-4">
-                <div className="text-3xl font-semibold">{step.id}</div>
-                <div className="overflow-hidden whitespace-nowrap">
-                  <div className="text-xs text-gray-500">{step.title}</div>
-                  <div className="uppercase font-semibold text-sm text-black">
+            <div className={`lg:justify-between md:gap-5  flex w-full ${step.id === 1 ? "pl-2 lg:pl-3" : "pl-6 lg:pl-10"}`}>
+              <div className="left flex gap-2 lg:gap-4 max-w-full">
+                <div className="text-lg lg:text-3xl font-semibold">{step.id}</div>
+
+                <div className="flex flex-col max-w-[120px] sm:max-w-[150px] overflow-hidden">
+                  <div className="text-[10px] lg:text-xs text-gray-500 truncate">
+                    {step.title}
+                  </div>
+                  <div className="uppercase font-semibold text-xs lg:text-sm text-black truncate">
                     {step.subtitle}
                   </div>
                 </div>
               </div>
-              <div className="text-2xl z-20 flex items-center justify-center">
-                <Icon size={35} />
+
+
+              <div className="text-xl lg:text-2xl z-20 flex items-center justify-center">
+                <Icon size={20} className="lg:hidden" />
+                <Icon size={35} className="hidden lg:block" />
               </div>
             </div>
 
             {/* Arrow */}
-            <div className="absolute top-0 bottom-0 right-[-2px] w-[30px] pointer-events-none z-10">
-              <div
-                className="absolute top-0 bottom-0 pointer-events-none z-10"
-                style={{
-                  right:
-                    step.id === 1 ? "25px" :
-                    step.id === 2 ? "30px" :
-                    step.id === 3 ? "31px" : "0px",
-                }}
-              >
+            <div
+              className={`absolute inset-y-0 
+  ${index === steps.length - 1
+                  ? "right-[-28px] md:right-[-32px] lg:right-[-21px]"
+                  : "right-[-34px] md:right-[-29px] lg:right-[-24px]"
+                } 
+  w-[50px] pointer-events-none z-10`}
+            >
+              <div className="absolute top-0 bottom-0 pointer-events-none z-10">
                 <div
-                  className={`absolute top-1/2 -translate-y-1/2 w-[50px] h-[50px] rotate-45 ${
-                    activeStep === step.id
+                  className={`absolute top-1/2 -translate-y-1/2 rotate-45
+        ${isActive
                       ? "bg-white border-t-2 border-r-2 border-black"
-                      : "bg-gray-50 border-t-2 border-r-2 border-gray-300"
-                  }`}
+                      : "bg-gray-50 border-t-2 border-r-2 border-gray-300"}
+        w-[36px] h-[36px] md:w-[37px] md:h-[37px] lg:w-[50px] lg:h-[50px]`}
                 ></div>
               </div>
             </div>
+
+
+
+
           </div>
+
         );
       })}
     </div>
+
+
+
   );
 };
 

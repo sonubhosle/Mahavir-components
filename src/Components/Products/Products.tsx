@@ -1,7 +1,7 @@
 import React from "react";
-import Product_Card from "./Product_Card";
-import "../Styles/Product.css";
-import { products } from "./Data";
+import Product_Card from "../Products/Product_Card";
+import "../../Styles/Product.css";
+import { products } from "../Data";
 
 interface ProductImage {
   img: string;

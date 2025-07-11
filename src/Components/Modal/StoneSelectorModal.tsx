@@ -1,6 +1,6 @@
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { modelArray } from "./Data";
+import { modelArray } from "../Data";
 
 interface ModelItem {
   id: string | number;

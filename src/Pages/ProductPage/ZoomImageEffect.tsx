@@ -12,8 +12,6 @@ interface ZoomImageProps {
 const ZoomImageEffect: React.FC<ZoomImageProps> = ({
   src,
   alt = '',
-  height = '450px',
-  width = '100%',
   className = '',
   scale = 2,
 }) => {
@@ -45,8 +43,7 @@ const ZoomImageEffect: React.FC<ZoomImageProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`overflow-hidden cursor-zoom-in ${className}`}
-      style={{ height, width }}
+      className={`overflow-hidden cursor-zoom-in ${className} w-full h-full`}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

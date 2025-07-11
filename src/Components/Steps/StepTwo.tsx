@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { modelArray } from "./Data"; 
+import { modelArray } from "../Data"; 
 
 interface StoneItem {
   id: number;

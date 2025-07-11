@@ -6,11 +6,11 @@ import 'swiper/css/navigation';
 import '../../Styles/ImageSlider.css';
 
 interface ImageSliderProps {
-    images: string[];
+   images: { img: string; tag: string }[];
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
-
+    
     const [currentIndex, setCurrentIndex] = useState(0);
     const swiperRef = useRef<any>(null);
 
@@ -52,6 +52,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
                 loop={false}
                 onSlideChange={handleSlideChange}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
+                className='h-full w-full'
             >
                 {images?.map((slide, i) => (
                     <SwiperSlide key={i} className="relative">
@@ -61,14 +62,14 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
                         <img
                             src={slide.img}
                             alt={`slide-${i}`}
-                            className="w-full h-[400px] object-cover transition-transform duration-500 hover:scale-150 cursor-pointer"
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-150 cursor-pointer"
                         />
                     </SwiperSlide>
                 ))}
             </Swiper>
 
             {/* Dynamic Dot Pagination */}
-            <div className="absolute bottom-4 left-1/2 flex items-center -translate-x-1/2 flex space-x-2 z-10">
+            <div className="absolute bottom-4 left-1/2 flex items-center -translate-x-1/2  space-x-2 z-10">
                 {getVisibleDots().map((index) => {
                     const diff = Math.abs(currentIndex - index);
                     let sizeClass = '';

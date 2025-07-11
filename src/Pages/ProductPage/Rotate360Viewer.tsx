@@ -27,8 +27,8 @@ const Rotate360Viewer: React.FC<Rotate360ViewerProps> = ({ images, className = '
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className={`overflow-hidden relative cursor-pointer ${className}`}
-      style={{ height }}
+      className={`overflow-hidden relative cursor-pointer ${className} h-full w-full`}
+      
     >
       {/* Main Rotating Image */}
       <img

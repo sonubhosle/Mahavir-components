@@ -1,3 +1,17 @@
 @import "tailwindcss";
 
 
+@media (max-width: 1273px) {
+  .custom-responsive {
+    flex-direction: column;
+  }
+    .custome-col-width {
+    width: 100%;
+  }
+}
+@media (min-width: 1274px) {
+  .custom-responsive {
+    flex-direction: row;
+
+  }
+}
