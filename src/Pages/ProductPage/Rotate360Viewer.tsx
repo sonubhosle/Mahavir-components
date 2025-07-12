@@ -7,7 +7,11 @@ interface Rotate360ViewerProps {
   height?: string;
 }
 
-const Rotate360Viewer: React.FC<Rotate360ViewerProps> = ({ images, className = '', height = '400px' }) => {
+const Rotate360Viewer: React.FC<Rotate360ViewerProps> = ({
+  images,
+  className = '',
+  height = '400px',
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
@@ -18,22 +22,32 @@ const Rotate360Viewer: React.FC<Rotate360ViewerProps> = ({ images, className = '
     const rect = container.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const percentage = mouseX / rect.width;
-    const newIndex = Math.floor(percentage * images.length);
-
+    const newIndex = Math.min(images.length - 1, Math.floor(percentage * images.length));
     setIndex(newIndex);
   };
 
+  // Early return if images array is empty
+  if (images.length === 0) return null;
+
   return (
-    <section ref={containerRef}  onMouseMove={handleMouseMove}  className={`overflow-hidden relative cursor-pointer ${className} h-full w-full`} >
+    <section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className={`overflow-hidden relative cursor-pointer ${className}`}
+      style={{ height }}
+      data-testid="rotate-360-container"
+    >
       <picture>
-        <source srcSet={images[index]} type='image/webp' />
-        <img loading='lazy'
+        <source srcSet={images[index]} type="image/webp" />
+        <img
+          loading="lazy"
           src={images[index]}
           alt={`Frame ${index}`}
           className="w-full h-full object-cover transition-opacity duration-75"
           draggable={false}
         />
       </picture>
+
       <section className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
         <svg width="300" height="80" viewBox="0 0 300 50" fill="none">
           <path
@@ -56,7 +70,6 @@ const Rotate360Viewer: React.FC<Rotate360ViewerProps> = ({ images, className = '
         </svg>
       </section>
     </section>
-
   );
 };
 

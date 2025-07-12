@@ -1,15 +1,28 @@
 import React, { useState, useRef, useEffect } from "react";
 import { IoIosClose } from "react-icons/io";
-import { IoChevronDownSharp } from "react-icons/io5";
+import { IoChevronDown, IoChevronDownSharp } from "react-icons/io5";
 import { checkout } from "../../Components/Data";
 import { Link } from "react-router-dom";
 
 const QuickCheckout: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<Boolean>(false);
     const [activeTab, setActiveTab] = useState<number>(checkout[0]?.id || 1);
+
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
+    const handleToggle = () => {
+        setIsDropdownOpen((prev) => !prev);
+    };
+
+    const sizes = [
+        "3", "3.25", "3.5", "3.75",
+        "4", "4.25", "4.5", "4.75",
+        "5", "5.25", "5.5", "5.75",
+    ];
+
     const contentRef = useRef<HTMLDivElement>(null);
     const [maxHeight, setMaxHeight] = useState("0px");
-
     const activeItem = checkout.find((item) => item.id === activeTab);
 
     useEffect(() => {
@@ -53,17 +66,20 @@ const QuickCheckout: React.FC = () => {
                 >
                     <div className="space-y-4 mt-4 max-w-2xl mx-auto">
                         {/* Top Buttons */}
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 overflow-x-auto scrollbar-hide" style={{
+                            scrollbarWidth: "none",
+                            msOverflowStyle: "none",
+                            WebkitOverflowScrolling: "touch",
+                        }}>
                             {checkout.map((item) => (
                                 <button
                                     role="button"
                                     key={item.id}
                                     onClick={() => setActiveTab(item.id)}
-                                    className={`flex gap-2 items-center cursor-pointer whitespace-nowrap rounded-md pl-3 pr-4 py-2 flex-1 justify-center border-2 transition-all ${
-                                        activeTab === item.id
-                                            ? "bg-white text-gray-900 border-dark"
-                                            : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
-                                    }`}
+                                    className={`flex gap-2 items-center cursor-pointer whitespace-nowrap rounded-md pl-3 pr-4 py-2 flex-1 justify-center border-2 transition-all ${activeTab === item.id
+                                        ? "bg-white text-gray-900 border-dark"
+                                        : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                                        }`}
                                 >
                                     <img src={item.svg} alt={item.label} className="w-6 h-6" />
                                     <p className="text-sm font-medium">{item.label}</p>
@@ -140,19 +156,43 @@ const QuickCheckout: React.FC = () => {
             {/* 👇 Bottom Box shown only when expanded */}
             {isOpen && (
                 <section className="w-full mt-6">
-                    <div className="flex items-center justify-between space-x-4">
-                        <select className="w-full sm:w-60 md:w-72 lg:w-80 appearance-none border border-gray-200 rounded-md px-4 py-2 bg-white text-gray-700 shadow-sm focus:outline-none cursor-pointer">
-                            <option disabled selected>
-                                Select Ring Size
-                            </option>
-                            <option>3</option>
-                            <option>3.25</option>
-                            <option>3.5</option>
-                            <option>3.75</option>
-                            <option>4</option>
-                            <option>4.25</option>
-                            <option>4.5</option>
-                        </select>
+                    <div className="flex items-center sm:flex-col justify-between space-x-4">
+
+                        <div className="relative  ">
+                            {/* Select Box */}
+                            <div
+                                className={`flex items-center justify-between px-4 py-2 border border-gray-200 rounded-md bg-white shadow-sm cursor-pointer ${isDropdownOpen ? "shadow-md" : ""
+                                    }`}
+                                onClick={handleToggle}
+                            >
+                                <span className="text-gray-700">
+                                    {selectedSize ? `Size: ${selectedSize}` : "Select Ring Size"}
+                                </span>
+                                <IoChevronDown
+                                    className={`text-xl transform transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""
+                                        }`}
+                                />
+                            </div>
+
+                            {/* Options Dropdown */}
+                            {isDropdownOpen && (
+                                <ul className="absolute z-10 mt-1 max-h-40 w-full overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg text-gray-700">
+                                    {sizes.map((size, index) => (
+                                        <li
+                                            key={index}
+                                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                            onClick={() => {
+                                                setSelectedSize(size); // ✅ Save selected value
+                                                setIsDropdownOpen(false); // ✅ Close dropdown
+                                                console.log("Selected size:", size);
+                                            }}
+                                        >
+                                            {size}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
 
                         <span className="text-[12px] text-gray-600 underline font-semibold">
                             Need help with sizing?
@@ -162,7 +202,7 @@ const QuickCheckout: React.FC = () => {
                     <div className="flex text-center justify-center flex-col mt-6">
                         <h2 className="text-2xl pb-2">Total Price</h2>
                         <p className="text-3xl font-bold">$1,450</p>
-                        <span className="mx-auto mt-2 flex gap-3 items-center bg-gray-200 text-gray-700 rounded-xl px-3 py-1 text-sm">
+                        <p className="mx-auto mt-2 flex gap-3 items-center bg-gray-200 text-gray-700 rounded-xl px-3 py-1 text-sm">
                             <picture>
                                 <source
                                     srcSet="https://i.postimg.cc/GmZg813h/svgviewer-png-output-4.png"
@@ -175,9 +215,10 @@ const QuickCheckout: React.FC = () => {
                                     srcSet="https://i.postimg.cc/GmZg813h/svgviewer-png-output-4.png"
                                     className="w-6 h-6"
                                 />
-                                Ships in 2-3 weeks
+
                             </picture>
-                        </span>
+                            Ships in 2-3 weeks
+                        </p>
                     </div>
                 </section>
             )}

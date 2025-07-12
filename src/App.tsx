@@ -91,7 +91,7 @@ const App: React.FC = () => {
               }
             />
             <Route path="/*" element={<NotFound />} />
-            <Route path="/products/:id/:name" element={<Product_Details />} />
+            <Route path="/products/:id" element={<Product_Details />} />
           </Routes>
         </div>
 

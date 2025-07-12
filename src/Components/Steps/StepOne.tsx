@@ -5,6 +5,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { LiaLifeRingSolid } from "react-icons/lia";
 import Products from "../Products/Products";
 import { IoFilter } from "react-icons/io5";
+import NewProducts from "../Products/NewProducts";
 
 interface IconItem {
   name: string;
@@ -98,7 +99,7 @@ const StepOne: React.FC = () => {
       <hr className="border-0 h-[1px] bg-gray-100 mt-6" />
 
       {/* Filters + Sort */}
-      <div className="flex justify-between items-center py-4  flex-wrap gap-4">
+      <div className="flex justify-between sm:flex-row flex-col-reverse  items-center py-4  flex-wrap gap-4">
         <div className="text-xl font-semibold text-black flex flex-wrap gap-4">
 
           <div className="btn-one flex items-center bg-gray-100 px-3 py-1 rounded-md">
@@ -116,7 +117,7 @@ const StepOne: React.FC = () => {
         {/* Sorting Dropdown */}
         <div className="relative flex gap-2">
           <button onClick={() => setIsIconPanelOpen(true)}
-            className="bg-white flex gap-3  p-4 border cursor-pointer border-gray-300 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-gray-50" >
+            className="bg-white flex gap-3 md:hidden  p-4 border cursor-pointer border-gray-300 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-gray-50" >
             <IoFilter size={20} />  Filters
           </button>
           <div className="">
@@ -147,6 +148,7 @@ const StepOne: React.FC = () => {
       </div>
 
       <Products />
+      <NewProducts />
     </section>
   );
 };

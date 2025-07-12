@@ -43,7 +43,7 @@ const Product_Card: React.FC<ProductCardProps> = ({ data, className = "", onColo
   return (
     <section className={`card ${className}`}>
       <div className="image">
-        <NavLink to={`/products/${data.id}/${data.name}`}>
+        <NavLink to={`/products/${data.id}`}>
           <picture>
             <source srcSet={activeImg} type="image/webp" />
             <img

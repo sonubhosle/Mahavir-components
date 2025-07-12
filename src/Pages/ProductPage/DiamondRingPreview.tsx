@@ -4,9 +4,9 @@ interface DiamondRingPreviewProps {
 }
 
 const DiamondRingPreview: React.FC<DiamondRingPreviewProps> = ({ className }) => {
-    
+
     // Scale Size Array
-    const displayOptions = [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0];
+    const displayOptions = [1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0];
 
     const actualScaleMap: Record<number, number> = {
         1.0: 1.0,
@@ -75,12 +75,12 @@ const DiamondRingPreview: React.FC<DiamondRingPreviewProps> = ({ className }) =>
                 <div className="relative flex bg-white/80 backdrop-blur-md rounded-full overflow-hidden">
                     {/* Sliding circle indicator */}
                     <div className="absolute top-0 left-0 h-full  rounded-full bg-white shadow transition-all duration-300 ease-in-out"
-                        style={{   width: `${100 / displayOptions.length}%`,   transform: `translateX(${displayOptions.indexOf(displayScale) * 100}%)`, }}  />
+                        style={{ width: `${100 / displayOptions.length}%`, transform: `translateX(${displayOptions.indexOf(displayScale) * 100}%)`, }} />
 
                     {/* Buttons with vertical dividers */}
                     {displayOptions.map((option, index) => (
                         <React.Fragment key={option}>
-                            <button  onClick={() => animateToScale(option)}   className={`relative z-10 flex-1 cursor-pointer text-base font-semibold py-[9px]   text-center transition-all duration-200
+                            <button onClick={() => animateToScale(option)} className={`relative z-10 flex-1 cursor-pointer text-base  py-[9px]   text-center transition-all duration-200
                         ${displayScale === option ? 'text-black' : 'text-gray-700 hover:text-black'}  `} >
                                 {option.toFixed(1)}
                             </button>

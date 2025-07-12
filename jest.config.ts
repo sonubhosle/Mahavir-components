@@ -9,16 +9,17 @@ const config: Config = {
   testMatch: ['<rootDir>/src/**/*.(test|spec).ts?(x)'],
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
+      '^.+\\.(js|jsx|mjs)$': 'babel-jest',
   },
   transformIgnorePatterns: [
     "/node_modules/(?!(swiper)/)"
   ],
 moduleNameMapper: {
   '\\.(css|less|scss|sass)$': '<rootDir>/__mocks__/styleMock.js',
-
-  // 🧩 specifically mock Swiper CSS
   '^swiper/css$': '<rootDir>/__mocks__/styleMock.js',
   '^swiper/css/.*$': '<rootDir>/__mocks__/styleMock.js',
+  '^swiper/react$': '<rootDir>/__mocks__/swiper/react.js',
+   '^swiper/modules$': '<rootDir>/__mocks__/swiper/modules.js',
 },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**'],

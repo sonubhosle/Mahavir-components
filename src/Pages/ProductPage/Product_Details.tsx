@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import HeroSection, { ProductType } from './HeroSection';
@@ -29,8 +30,36 @@ const Product_Details: React.FC = () => {
 
   if (!product) return <div className="p-10 text-center">Product not found.</div>;
 
+  <Helmet>
+  <title>{product.name} | Keyzar Jewelry</title>
+  <meta
+    name="description"
+    content={product.description.slice(0, 150)}
+  />
+  <link
+    rel="canonical"
+    href={`http://localhost:5173/products/${product.id}`}
+  />
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": product.name,
+      "description": product.description,
+      "sku": product.id,
+      "image": [
+        product.images?.gold?.[0]?.img,
+        product.images?.silver?.[0]?.img,
+        product.images?.red?.[0]?.img
+      ].filter(Boolean)
+    })}
+    
+  </script>
+</Helmet>
+
+
   // Custome Config Stones 
-  
+
   const stoneConfigs = [
     { label: 'Center Stone Shape', data: product.centerStone },
     { label: 'Material', data: product.materialStone },
@@ -47,22 +76,46 @@ const Product_Details: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{product.name} | Keyzar Jewelry</title>
+        <meta
+          name="description"
+          content={product.description?.slice(0, 150) || "Explore our beautiful jewelry collection."}
+        />
+        <link rel="canonical" href={`http://localhost:5173/products/${product.id}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": product.name,
+            "description": product.description,
+            "sku": product.id,
+            "image": [
+              product.images?.gold?.[0]?.img,
+              product.images?.silver?.[0]?.img,
+              product.images?.red?.[0]?.img
+            ].filter(Boolean)
+          })}
+        </script>
+      </Helmet>
       <section className="w-full flex flex-col lg:flex-row mt-10 gap-10 items-stretch">
         {/* Left: Hero Section */}
         <section
-          className="w-full lg:w-[45%] xl:w-[55%] relative bg-transparent lg:bg-[#f7f7f7]
-          lg:rounded-3xl border border-gray-100 overflow-hidden h-full"
+          className="w-full pb-5 lg:w-[45%] xl:w-[55%] relative bg-transparent 
+          lg:rounded-3xl   overflow-hidden h-full"
         >
           <HeroSection product={product} />
+          <div className="hidden lg:block pb-5">
+            <h2 className="text-2xl font-bold pb-4 mt-5">Match Made In Heaven</h2>
             <Related_Products />
-          
+          </div>
         </section>
 
         {/* Right: Product Info */}
         <section className="w-full lg:w-[55%] xl:w-[45%] pb-10 h-full">
           <header className="flex justify-between gap-6">
             <div className="flex flex-col gap-2">
-              <h1 className="text-xl sm:text-2xl md:text-3xl text-gray-900 font-medium">
+              <h1 className="text-xl sm:text-2xl md:text-3xl text-gray-900 font-medium" data-testid="hero-section">
                 {product.name}
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl text-gray-900 ">
@@ -149,14 +202,14 @@ const Product_Details: React.FC = () => {
               </Link>
             </p>
 
-            <button className="flex items-center gap-2 text-xl text-gray-800">
+            <button className="flex items-center gap-2 text-xl text-gray-800 mt-2">
               <FaRegHeart />
               <span>Add to wish list</span>
             </button>
           </div>
 
           {/* Feature Icons */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 w-full max-w-xl">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 w-full mt-5 ">
             {[
               { icon: <SlPlane size={40} />, label: 'Overnight Shipping' },
               { icon: <LiaAwardSolid size={40} />, label: 'Lifetime Warranty' },
@@ -204,9 +257,12 @@ const Product_Details: React.FC = () => {
             </Link>
           </div>
         </section>
-         
+
       </section>
-       
+      <div className="block lg:hidden ">
+        <h2 className="text-2xl font-bold pb-4 mt-2">Match Made In Heaven</h2>
+        <Related_Products />
+      </div>
 
       <Review />
     </>

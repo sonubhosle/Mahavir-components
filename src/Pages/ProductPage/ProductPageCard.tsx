@@ -41,12 +41,12 @@ const ProductPageCard: React.FC<ProductCardProps> = ({ data, className = "", onC
   };
 
   return (
-    <section className='rounded bg-white p-1'>
+    <section className="border rounded bg-white p-1 border-gray-100 xl:h-full   ">
       <div className="image">
         <NavLink to={`/products/${data.id}/${data.name}`}>
           <picture>
             <source srcSet={activeImg} type="image/webp" />
-            <img src={activeImg} loading="lazy" alt={data.name} className="w-full h-auto" />
+            <img src={activeImg} loading="lazy" alt={data.name} className="w-full  " />
           </picture>
         </NavLink>
       </div>

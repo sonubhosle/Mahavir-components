@@ -40,11 +40,15 @@ const ProductSettings: React.FC = () => {
                     <p className="text-xl font-bold">14k White Gold</p>
 
                     {/* Metal chart */}
-                    <div className="flex gap-4 mt-2">
+                    <div className="flex flex-col sm:flex-row gap-4 mt-2">
                         <picture>
                             <source srcSet="https://i.postimg.cc/hvfjhY0g/svgviewer-png-output-9.png" type="image/webp" />
-                            <img loading="lazy" className="w-20 h-20" src="https://i.postimg.cc/hvfjhY0g/svgviewer-png-output-9.png" alt="circle" srcSet="https://i.postimg.cc/hvfjhY0g/svgviewer-png-output-9.png" />
-                        </picture>
+  <img
+    loading="lazy"
+    className="w-20 h-20 block sm:mx-auto"
+    src="https://i.postimg.cc/hvfjhY0g/svgviewer-png-output-9.png"
+    alt="circle"
+  />                        </picture>
                         <section className="text-xs text-gray-900 grid grid-cols-2 gap-y-2 gap-x-4">
                             <p className="flex items-center gap-2 text-[14px]">
                                 <span className="w-[15px] h-[15px]  rounded-full bg-[#faef89]"></span>

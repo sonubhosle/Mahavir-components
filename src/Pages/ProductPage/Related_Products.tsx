@@ -1,6 +1,12 @@
-import React from 'react'
-import { products, relatedproducts } from '../../Components/Data';
-import ProductPageCard from './ProductPageCard';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { relatedproducts } from "../../Components/Data";
+import ProductPageCard from "./ProductPageCard";
 
 interface ProductImage {
     img: string;
@@ -18,14 +24,26 @@ interface ProductData {
 }
 
 const Related_Products: React.FC = () => {
-
     return (
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
-            {relatedproducts.map((prod: ProductData, index: number) => (
-                <ProductPageCard data={prod} key={prod.id || index} />
-            ))}
-        </section>
-    )
-}
+        <section className="relative ">
+            <Swiper
+                spaceBetween={16}
+                slidesPerView={3}
+                breakpoints={{
 
-export default Related_Products
+                    640: { slidesPerView: 4 },
+                    1024: { slidesPerView: 3 },
+
+                }}
+            >
+                {relatedproducts.map((prod: ProductData, index: number) => (
+                    <SwiperSlide key={prod.id || index}>
+                        <ProductPageCard data={prod} />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </section>
+    );
+};
+
+export default Related_Products;
