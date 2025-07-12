@@ -1,4 +1,3 @@
-// src/components/Rotate360Viewer.tsx
 import React, { useRef, useState } from 'react';
 
 interface Rotate360ViewerProps {
@@ -15,6 +14,9 @@ const Rotate360Viewer: React.FC<Rotate360ViewerProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
+  const lastTouchX = useRef<number | null>(null);
+
+  // Mouse move (desktop)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const container = containerRef.current;
     if (!container || images.length === 0) return;
@@ -26,14 +28,43 @@ const Rotate360Viewer: React.FC<Rotate360ViewerProps> = ({
     setIndex(newIndex);
   };
 
-  // Early return if images array is empty
+  // Touch move (mobile)
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    lastTouchX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (images.length === 0 || lastTouchX.current === null) return;
+
+    const currentX = e.touches[0].clientX;
+    const deltaX = currentX - lastTouchX.current;
+
+    // Adjust sensitivity here
+    const sensitivity = 5;
+    if (Math.abs(deltaX) > sensitivity) {
+      let newIndex = index + (deltaX > 0 ? -1 : 1);
+      if (newIndex < 0) newIndex = images.length - 1;
+      if (newIndex >= images.length) newIndex = 0;
+      setIndex(newIndex);
+      lastTouchX.current = currentX;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    lastTouchX.current = null;
+  };
+
+  // No images to display
   if (images.length === 0) return null;
 
   return (
     <section
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className={`overflow-hidden relative cursor-pointer ${className}`}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      className={`overflow-hidden relative cursor-pointer select-none ${className}`}
       style={{ height }}
       data-testid="rotate-360-container"
     >

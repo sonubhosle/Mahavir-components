@@ -47,7 +47,7 @@ const HeroSection: React.FC<{ product: ProductType }> = ({ product }) => {
         <div className="flex custom-responsive">
           <div className="w-full custome-col-width overflow-hidden">
             {activeTab === "360" && (
-              <Rotate360Viewer images={product.rotateImages.map((img) => img.ring)} className="w-full h-full object-cover" />
+              <Rotate360Viewer   data-testid="rotate-360-mobile" images={product.rotateImages.map((img) => img.ring)} className="w-full h-full object-cover" />
             )}
             {activeTab === "images" && <ImageSlider images={product.slideImages} />}
             {activeTab === "video" && (
@@ -55,7 +55,7 @@ const HeroSection: React.FC<{ product: ProductType }> = ({ product }) => {
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#F3F3F3] bg-opacity-60 text-black px-3 py-1 rounded-md text-sm z-10">
                   Show with 2 ct
                 </div>
-                <VideoSlider videos={product.slidesVideos} />
+                <VideoSlider videos={product.slidesVideos} data-testid="video-slider" />
               </>
             )}
           </div>
@@ -102,10 +102,10 @@ const HeroSection: React.FC<{ product: ProductType }> = ({ product }) => {
             <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#F3F3F3] bg-opacity-60 text-black px-3 py-1 rounded-md text-sm z-10">
               Show with 2 ct
             </div>
-            <VideoSlider videos={product.slidesVideos} />
+            <VideoSlider videos={product.slidesVideos} data-testid="video-slider" />
           </div>
           <div className="w-full custome-col-width overflow-hidden">
-            <Rotate360Viewer images={product.rotateImages.map((img) => img.ring)} />
+            <Rotate360Viewer   data-testid="rotate-360-mobile" images={product.rotateImages.map((img) => img.ring)} />
           </div>
         </div>
 

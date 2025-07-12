@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>0/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>0/15</span>
             </div>
         
             
@@ -126,7 +126,20 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,6 +149,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,11 +164,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -198,7 +224,11 @@ interface Rotate360ViewerProps {
   height?: string;
 }
 &nbsp;
-const Rotate360Viewer: React.FC&lt;Rotate360ViewerProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> images, className = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> height = <span class="branch-0 cbranch-no" title="branch not covered" >'400px' </span>}) =&gt; {</span>
+const Rotate360Viewer: React.FC&lt;Rotate360ViewerProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
+  images,
+  className = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
+  height = <span class="branch-0 cbranch-no" title="branch not covered" >'400px',</span>
+}) =&gt; {
   const containerRef = <span class="cstat-no" title="statement not covered" >useRef&lt;HTMLDivElement&gt;(null);</span>
   const [index, setIndex] = <span class="cstat-no" title="statement not covered" >useState(0);</span>
 &nbsp;
@@ -209,22 +239,32 @@ const Rotate360Viewer: React.FC&lt;Rotate360ViewerProps&gt; = <span class="cstat
     const rect = <span class="cstat-no" title="statement not covered" >container.getBoundingClientRect();</span>
     const mouseX = <span class="cstat-no" title="statement not covered" >e.clientX - rect.left;</span>
     const percentage = <span class="cstat-no" title="statement not covered" >mouseX / rect.width;</span>
-    const newIndex = <span class="cstat-no" title="statement not covered" >Math.floor(percentage * images.length);</span>
-&nbsp;
+    const newIndex = <span class="cstat-no" title="statement not covered" >Math.min(images.length - 1, Math.floor(percentage * images.length));</span>
 <span class="cstat-no" title="statement not covered" >    setIndex(newIndex);</span>
   };
 &nbsp;
+  // Early return if images array is empty
+<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if (images.length === 0) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;section ref={containerRef}  onMouseMove={handleMouseMove}  className={`overflow-hidden relative cursor-pointer ${className} h-full w-full`} &gt;
+    &lt;section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className={`overflow-hidden relative cursor-pointer ${className}`}
+      style={{ height }}
+      data-testid="rotate-360-container"
+    &gt;
       &lt;picture&gt;
-        &lt;source srcSet={images[index]} type='image/webp' /&gt;
-        &lt;img loading='lazy'
+        &lt;source srcSet={images[index]} type="image/webp" /&gt;
+        &lt;img
+          loading="lazy"
           src={images[index]}
           alt={`Frame ${index}`}
           className="w-full h-full object-cover transition-opacity duration-75"
           draggable={false}
         /&gt;
       &lt;/picture&gt;
+&nbsp;
       &lt;section className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 pointer-events-none"&gt;
         &lt;svg width="300" height="80" viewBox="0 0 300 50" fill="none"&gt;
           &lt;path
@@ -247,7 +287,6 @@ const Rotate360Viewer: React.FC&lt;Rotate360ViewerProps&gt; = <span class="cstat
         &lt;/svg&gt;
       &lt;/section&gt;
     &lt;/section&gt;
-&nbsp;
   );
 };
 &nbsp;
@@ -259,7 +298,7 @@ const Rotate360Viewer: React.FC&lt;Rotate360ViewerProps&gt; = <span class="cstat
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-12T11:23:18.837Z
+                at 2025-07-12T15:16:08.256Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

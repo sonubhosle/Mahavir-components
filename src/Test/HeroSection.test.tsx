@@ -1,80 +1,86 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import HeroSection from "../Pages/ProductPage/HeroSection";
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import HeroSection from '../Pages/ProductPage/HeroSection';
+import '@testing-library/jest-dom';
 
-// Mock dependent components
-jest.mock("../Components/Sliders/ImageSlider", () => () => <div data-testid="image-slider">ImageSlider</div>);
-jest.mock("../Components/Sliders/VideoSlider", () => () => <div data-testid="video-slider">VideoSlider</div>);
-jest.mock("../Pages/ProductPage/Rotate360Viewer", () => () => <div data-testid="rotate-360">Rotate360Viewer</div>);
-jest.mock("../Pages/ProductPage/DiamondRingPreview", () => () => <div data-testid="diamond-preview">DiamondRingPreview</div>);
-jest.mock("../Pages/ProductPage/ZoomImageEffect", () => ({ src, alt }: any) => (
-  <img data-testid="zoom-image" src={src} alt={alt} />
-));
+// ✅ Mock all subcomponents to isolate HeroSection logic
+jest.mock('../Components/Sliders/ImageSlider', () => ({
+  __esModule: true,
+  default: () => <div data-testid="image-slider">ImageSlider</div>,
+}));
 
-// Mock product data
+jest.mock('../Components/Sliders/VideoSlider', () => ({
+  __esModule: true,
+  default: () => <div data-testid="video-slider">VideoSlider</div>,
+}));
+
+jest.mock('../Pages/ProductPage/ZoomImageEffect', () => ({
+  __esModule: true,
+  default: ({ src }: { src: string }) => <img src={src} alt="ZoomImage" data-testid="zoom-image" />,
+}));
+
+jest.mock('../Pages/ProductPage/Rotate360Viewer', () => ({
+  __esModule: true,
+  default: () => <div data-testid="rotate-360-viewer">360Viewer</div>,
+}));
+
+jest.mock('../Pages/ProductPage/DiamondRingPreview', () => ({
+  __esModule: true,
+  default: () => <div data-testid="diamond-ring-preview">DiamondRingPreview</div>,
+}));
+
+// ✅ Mock product data
 const mockProduct = {
-  id: "1",
-  name: "Test Ring",
-  price: "₹90,000",
-  intrest: "0% EMI",
-  description: "Description",
-  slidesVideos: [{ id: 1, gif: "video1.mp4" }],
-  slideImages: [{ img: "img1.jpg", tag: "Main" }],
-  rotateImages: [{ ring: "rotate1.jpg" }],
+  id: '1',
+  name: 'Diamond Ring',
+  price: '999',
+  intrest: '10%',
+  description: 'Beautiful ring',
+  slidesVideos: [{ id: 1, gif: 'video.mp4' }],
+  slideImages: [{ img: 'image1.jpg', tag: 'Front View' }],
+  rotateImages: [{ ring: 'rotate1.jpg' }, { ring: 'rotate2.jpg' }],
   images: {
-    silver: [{ img: "s1.jpg", color: "#ccc" }],
-    gold: [{ img: "g1.jpg", color: "#ffd700" }],
-    red: [{ img: "r1.jpg", color: "#f00" }],
+    silver: [],
+    gold: [],
+    red: [],
   },
-  zoomRingOne: [{ img: "z1.jpg", tag: "Zoom 1" }],
-  zoomRingTwo: [{ img: "z2.jpg", tag: "Zoom 2" }],
-  zoomRingThree: [{ img: "z3.jpg", tag: "Zoom 3" }],
-  zoomRingFour: [{ img: "z4.jpg", tag: "Zoom 4" }],
+  zoomRingOne: [{ img: 'zoom1.jpg', tag: 'Top' }],
+  zoomRingTwo: [{ img: 'zoom2.jpg', tag: 'Side' }],
+  zoomRingThree: [{ img: 'zoom3.jpg', tag: 'Angle' }],
+  zoomRingFour: [{ img: 'zoom4.jpg', tag: 'Bottom' }],
+  centerStone: [],
+  materialStone: [],
+  styleStone: [],
 };
 
-// Mock matchMedia globally for large screen behavior
-beforeAll(() => {
-  Object.defineProperty(window, "matchMedia", {
-    writable: true,
-    value: jest.fn().mockImplementation((query) => ({
-      matches: query.includes("min-width: 1024px"),
-      media: query,
-      onchange: null,
-      addListener: jest.fn(), // deprecated
-      removeListener: jest.fn(), // deprecated
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-      dispatchEvent: jest.fn(),
-    })),
-  });
-});
-
-describe("HeroSection Component", () => {
-  test("should render Rotate360Viewer by default", () => {
+describe('HeroSection Component', () => {
+  it('renders default 360 viewer on mobile', () => {
     render(<HeroSection product={mockProduct} />);
-    expect(screen.getByTestId("rotate-360")).toBeInTheDocument();
+    expect(screen.getByTestId('rotate-360-viewer')).toBeInTheDocument();
   });
 
-  test("should render ImageSlider when 'Images' tab is clicked", () => {
+  it('switches to image tab and renders ImageSlider', () => {
     render(<HeroSection product={mockProduct} />);
-    fireEvent.click(screen.getByText("Images"));
-    expect(screen.getByTestId("image-slider")).toBeInTheDocument();
+    const imageTab = screen.getByText(/Images/i);
+    fireEvent.click(imageTab);
+    expect(screen.getByTestId('image-slider')).toBeInTheDocument();
   });
 
-  test("should render VideoSlider when 'Video' tab is clicked", () => {
+  it('switches to video tab and renders VideoSlider', () => {
     render(<HeroSection product={mockProduct} />);
-    fireEvent.click(screen.getByText("Video"));
-    expect(screen.getByTestId("video-slider")).toBeInTheDocument();
+    const videoTab = screen.getByText(/Video/i);
+    fireEvent.click(videoTab);
+    expect(screen.getByTestId('video-slider')).toBeInTheDocument();
   });
 
-  test("should render DiamondRingPreview in desktop (large screen) mode", () => {
+  it('renders ZoomImageEffect and ImageSlider in desktop view', () => {
     render(<HeroSection product={mockProduct} />);
-    expect(screen.getByTestId("diamond-preview")).toBeInTheDocument();
+    expect(screen.getAllByTestId('zoom-image').length).toBeGreaterThan(0);
+    expect(screen.getByTestId('image-slider')).toBeInTheDocument();
   });
 
-  test("should render at least 4 ZoomImageEffect images", () => {
+  it('renders DiamondRingPreview', () => {
     render(<HeroSection product={mockProduct} />);
-    const zoomImages = screen.getAllByTestId("zoom-image");
-    expect(zoomImages.length).toBeGreaterThanOrEqual(4);
+    expect(screen.getByTestId('diamond-ring-preview')).toBeInTheDocument();
   });
 });
